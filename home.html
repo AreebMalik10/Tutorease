@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subject Selection</title>
+    <style>
+        .selected-courses {
+            margin-top: 10px;
+        }
+
+        .selected-course {
+            margin-right: 5px;
+            padding: 5px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .remove-course {
+            cursor: pointer;
+            margin-left: 5px;
+        }
+    </style>
+    <script>
+        function addSubject() {
+            var selectElement = document.getElementById("Subjects");
+            var selectedSubjectsDiv = document.getElementById("selectedSubjects");
+
+            // Check if "Please Select" is selected
+            if (selectElement.value === "Please Select") {
+                alert("Please select a valid subject.");
+                return;
+            }
+
+            // Check if the maximum limit (6 subjects) is reached
+            if (selectedSubjectsDiv.childElementCount >= 6) {
+                alert("You can select up to 6 subjects.");
+                return;
+            }
+
+            // Check if the subject is already selected
+            for (var i = 0; i < selectedSubjectsDiv.children.length; i++) {
+                if (selectedSubjectsDiv.children[i].textContent.trim() === selectElement.value) {
+                    alert("You have already selected this subject.");
+                    return;
+                }
+            }
+
+            // Create a div for the selected subject
+            var selectedCourseDiv = document.createElement("div");
+            selectedCourseDiv.className = "selected-course";
+            selectedCourseDiv.textContent = selectElement.value;
+
+            // Create a span with a cross button to remove the course
+            var removeButton = document.createElement("span");
+            removeButton.className = "remove-course";
+            removeButton.textContent = "✖";
+            removeButton.onclick = function () {
+                selectedSubjectsDiv.removeChild(selectedCourseDiv);
+            };
+
+            // Append the remove button to the selected course div
+            selectedCourseDiv.appendChild(removeButton);
+
+            // Append the selected course div to the container
+            selectedSubjectsDiv.appendChild(selectedCourseDiv);
+
+            // Reset the select element
+            selectElement.value = "Please Select";
+        }
+    </script>
+</head>
+<body>
+
+<div class="col-md-4">
+    <label for="Subjects">Subjects</label>
+    <select name="Subjects" id="Subjects">
+        <option value="Please Select">Please Select</option>
+        <option value="Biology">Biology</option>
+        <option value="Chemistry">Chemistry</option>
+        <option value="Physics">Physics</option>
+        <option value="Maths">Maths</option>
+        <option value="Urdu">Urdu</option>
+        <option value="English">English</option>
+        <option value="Islamiat">Islamiat</option>
+        <option value="Pak Studies">Pakistan Studies</option>
+        <option value="Accounting">Accounting and Finance</option>
+        <option value="Computer Science">Computer Science</option>
+        <option value="Statistics">Statistics</option>
+        <option value="Economics">Economics</option>
+        <option value="Business Law">Business Law</option>
+    </select>
+    <button onclick="addSubject()">Add Subject</button>
+</div>
+
+<div class="col-md-4">
+    <label for="selectedSubjects">Selected Subjects:</label>
+    <div id="selectedSubjects" class="selected-courses"></div>
+</div>
+
+</body>
+</html>

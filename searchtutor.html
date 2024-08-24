@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Search Tutor</title>
+    <link rel="stylesheet" href="searchtutor.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body> 
+    <header>
+    <div class="logo-container">
+        <img src="images/tutor.png" alt="Tutorme Logo">
+        <h1>Tutorease</h1>
+    </div>
+    <nav>
+        <a href="req.html">Request a Tutor</a>
+        <a href="searchtutor.html">Search Tutors</a>
+        <a href="#">Recent Jobs</a>
+        <a href="#">Forum</a>
+        <a href="#">About</a>
+        <a href="#">Contact Us</a>
+        
+        <input type="text" class="search-box" placeholder="Search...">
+        <button class="Search-button" onclick="Search()"> Search </button>
+    
+    </nav>
+</header>
+<br>
+    <h1 style="text-align: center;">Search Tutors</h1>
+
+    <form action="submit-form.php" method="post" class="form-inline">
+        <div class="row">
+            <div class="col-md-4">
+              
+                <select id="class" name="class" placeholder="Select Class" required>
+                    <option value="Please Select">Select Class</option>
+                    <option value="9th">9th</option>
+                    <option value="10th">10th</option>
+                    <option value="11th">11th</option>
+                    <option value="12th">12th</option>
+                    <option value="ACCA">ACCA</option>
+                    <option value="CA">CA</option>
+                    <option value="BSC">BSC</option>
+                    <option value="ICOM">ICOM</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                
+                <select id="select province" name="select province" placeholder="select province" required>
+                <option value="Please Select">Select Province</option>
+                    <option value="Federal">Islamabad</option>
+                    <option value="Punjab">Punjab</option>
+                    <option value="Sindh">Sindh</option>
+                    <option value="KPK">KPK</option>
+                    <option value="Balochistan">Balochistan</option>
+                </select>
+            </div>
+
+            <div class="col-md-4">
+                <select name="teaching mode" id="teaching mode">
+                    <option value="online teaching mode">Online Teaching Mode</option>
+                    <option value="home teaching mode">Home Teaching Mode</option>
+                    <option value="online&home teaching mode">Online & Home teaching Mode</option>
+                </select>
+            </div>
+            
+        </div>
+
+            <div class="row">
+                
+                
+                <div class="col-md-4">
+                    <label for="Area"></label>
+                    <input type="text" name="Area" id="Area" placeholder="Area" required>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="City"></label>
+                    <input type="text" name="City" id="City" placeholder="City" required>
+                </div>
+           
+            
+            
+        </div>
+<br>
+         <button type="submit">Submit</button>
+        
+
+    </form>
+
+    <h1 style="text-align: center;">Tutors Suggestions</h1>
+    <div class="card mb-3" style="max-width: 945px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/k2.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Abdul Mateen Kundi</h5>
+              <h6 class="card-title">Software Engineer</h6>
+              <h6 class="card-title">Graduate from CUST University</h6>
+              <h6 class="card-title">Subjects: <span class="not-bold">Computer Science</span></h6>
+              <h6 class="card-title">Available for: <span class="not-bold">Online Tutions</span> </h6>
+              <h6 class="card-title">Time Available: <span class="not-bold">3:00 PM to 8:00 PM</span> </h6> <br>
+              <button class="btn btn-dark">Hire this tutor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="card mb-3" style="max-width: 940px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/h.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Haseeb Ali</h5>
+              <h6 class="card-title">Software Engineer</h6>
+              <h6 class="card-title">Graduate from CUST University</h6>
+              <h6 class="card-title">Subjects: <span class="not-bold">Database & Data Structure</span></h6>
+              <h6 class="card-title">Available for: <span class="not-bold">Online Tutions</span> </h6>
+              <h6 class="card-title">Time Available: <span class="not-bold">5:00 PM to 9:00 PM</span> </h6> <br>
+              <button class="btn btn-dark">Hire this tutor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+<br>
+      <div class="card mb-3" style="max-width: 945px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="images/s.jpg" class="img-fluid rounded-start" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Syed Sarmad Abbas</h5>
+              <h6 class="card-title">Software Engineer</h6>
+              <h6 class="card-title">Graduate from CUST University</h6>
+              <h6 class="card-title">Subjects: <span class="not-bold">ITP & OOP</span></h6>
+              <h6 class="card-title">Available for: <span class="not-bold">Online Tutions</span> </h6>
+              <h6 class="card-title">Time Available: <span class="not-bold">4:00 PM to 9:00 PM</span> </h6> <br>
+              <button class="btn btn-dark">Hire this tutor</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div class="footer-dark">
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a href="#">Tutions</a></li>
+                            <li><a href="#">Digital Support</a></li>
+                            <li><a href="#">Learn from Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 item">
+                        <h3>About</h3>
+                        <ul>
+                            <li><a href="#">Company</a></li>
+                            <li><a href="#">Team</a></li>
+                            <li><a href="#">Careers</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 item text">
+                        <h3>Tutorease</h3>
+                        <p>Tutorease, your gateway to seamless learning, connects students with skilled tutors for an enriching educational journey. Our platform fosters a user-friendly environment, making online tutoring a breeze. Dive into a world of personalized education, where Tutorease ensures academic excellence through expert guidance. Unleash your potential, embrace interactive sessions, and embark on a learning adventure with Tutorease. Elevate your education, effortlessly, with our innovative and tailored tutoring solutions.</p>
+                   
+                <p class="copyright">Tutorease © 2018</p>
+            </div>
+        </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
